@@ -133,3 +133,39 @@ Above we are going to log Back into Client-1 and open powershell so we can ping 
 <p>
   Create a new OU named “_CLIENTS” and then drag Client-1 into the _CLIENTS folder at the bottom of the screen.
 </p>
+<br />
+
+<p>
+  <img src="https://i.imgur.com/aMZKx6j.png" height="40%" width="40%" alt="Non-Administrative users"/>  
+</p>
+<p>
+  Log into Client-1 as mydomain.com\jane_admin and open the system properties. Select Remote Desktop then allow domain users access to remote desktop. Now you can now log into Client-1 as a normal, non-administrative user. 
+</p>
+<br />
+
+<p>
+    <img src="https://i.imgur.com/FOKp0HD.jpeg" height="40%" width="40%" alt="Additional Users"/> 
+    <img src="https://i.imgur.com/lCZ1ElT.jpeg" height="40%" width="40%" alt="Additional Users"/>  
+</p>
+<p>
+  Login to DC-1 as jane_admin and then open PowerShell_ise as an administrator. 
+</p>
+<br />
+
+<p>
+   <img src="https://i.imgur.com/RvDjLIB.jpeg" height="40%" width="40%" alt="Additional Users"/>
+   <img src="https://i.imgur.com/NoPs4hA.jpeg" height="40%" width="40%" alt="Additional Users"/> 
+</p>
+<p>
+  Create a new File and paste the contents of the script in the first photo into it, this is whats going to help create the users. 
+</p>
+<br />
+
+<p>
+   <img src="https://i.imgur.com/2JDoWae.jpeg" height="40%" width="40%" alt="Additional Users"/>
+   <img src="https://i.imgur.com/xxMaZA7.png" height="40%" width="40%" alt="Additional Users"/>
+</p>
+<p>
+  Run the script and observe the accounts being created and also When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES).
+</p>
+
