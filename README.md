@@ -3,7 +3,7 @@
 </p>
 
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
+This Project outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
 
 
 <h2>Environments and Technologies Used</h2>
@@ -23,11 +23,13 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Setup Domain Controller and Client 1 in Azure
 - Install Active Directory and create a Domain Admin user within the Domain
 - Join Client 1 to your Domain
-- Setup Remote Desktop for non-administrative users on Client-1 and Create a bunch of additional users and attempt to log into client-1 with one of the users
-- Dealing with Account Lockouts and Enabling and Disabling Accounts
+- Setup Remote Desktop for non-administrative users on Client-1 and Create a bunch of additional users 
+- Dealing with Account Lockouts
 
 
 <h2>Deployment and Configuration Steps</h2>
+
+<h4> Setup Domain Controller and Client-1 in Azure:</h4>
 
 <p>
 <img src="https://i.imgur.com/mpCWlDp.jpeg" height="50%" width="50%" alt="Domain Controller"/>
@@ -64,6 +66,8 @@ Now we are going to create a second VM in windows 10 called Client 1, but make s
 Above we are going to log Back into Client-1 and open powershell so we can ping the private address of the Domain controller, as well as make sure that the ping was successful. 
 </p>
 <br />
+
+<h4>Install Active Directory and create a Domain Admin user within the Domain:</h4>
 
 <p>
   <img src="https://i.imgur.com/Du4w1tL.jpeg" height="40%" width="40%" alt="Active Directory"/>
@@ -110,6 +114,7 @@ Above we are going to log Back into Client-1 and open powershell so we can ping 
 </p>
 <br />
 
+<h4> Join Client 1 to your Domain:</h4>
 <p>
    <img src="https://i.imgur.com/jL6B34A.jpeg" height="40%" width="40%" alt="Client-1"/>
 </p>
@@ -134,6 +139,8 @@ Above we are going to log Back into Client-1 and open powershell so we can ping 
   Create a new OU named “_CLIENTS” and then drag Client-1 into the _CLIENTS folder at the bottom of the screen.
 </p>
 <br />
+
+<h4>Setup Remote Desktop for non-administrative users on Client-1 and Create a bunch of additional users:</h4>
 
 <p>
   <img src="https://i.imgur.com/aMZKx6j.png" height="40%" width="40%" alt="Non-Administrative users"/>  
@@ -168,4 +175,24 @@ Above we are going to log Back into Client-1 and open powershell so we can ping 
 <p>
   Run the script and observe the accounts being created and also When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES).
 </p>
+<br />
+
+<h4>Dealing with Account Lockouts:</h4>
+
+<p>
+  <img src="https://i.imgur.com/nmeFuU5.jpeg" height="40%" width="40%" alt="Account Lock outs"/>
+</p>
+<p>
+  Here we just attempted login with a random user and the password failed. This happened a couple of more times which locked us out if the account. 
+</p>
+<br />
+
+<p>
+  <img src="https://i.imgur.com/DaRjNiP.jpeg" height="40%" width="40%" alt="Account Lock outs"/>
+  <img src="https://i.imgur.com/OYwnetT.jpeg" height="40%" width="40%" alt="Account Lock outs"/> 
+</p>
+<p>
+  Go to Active Diectory and find the user , once your into user's account you will see the account is locked. So. we will umlock and reset the password as well. Logging in with that user shouldn't be an issue now. 
+</p>
+<br />
 
